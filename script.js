@@ -479,13 +479,13 @@ function gravarDados(){
                        &lt;/div&gt;&lt;/label&gt;
             &lt;/div&gt;
     &lt;/nav&gt;
-    <script>
-       let divmenu=document.getElementsByClassName(partMenu1);
+    &lt;script&gt;
+       let divmenu=document.getElementsByClassName(`partMenu`);
        function muda(div){
            let i=div-1;
-        divmenu[i].style.backgroundColor=${corBtHover.value};
+        divmenu[i].style.backgroundColor=$corBtHover;
     }
-   </script>
+   &lt;/script&gt;
     </code>`
     codigoCSS.innerHTML+=`<pre><code>/*formatação do menu-mobile in.*/
         nav#menu-mobile1{
