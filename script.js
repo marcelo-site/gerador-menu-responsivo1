@@ -1,6 +1,3 @@
-// const divMenuEscondido=document.getElementById('menuEscondido');
-// const divFilhoescondido=document.getElementById('filhoEscondido');
-// const itenEscondido=document.getElementById('itemescondido');
 let icon1="";
 let icon2="";
 let icon3="";
@@ -479,13 +476,6 @@ function gravarDados(){
                        &lt;/div&gt;&lt;/label&gt;
             &lt;/div&gt;
     &lt;/nav&gt;
-    &lt;script&gt;
-       let divmenu=document.getElementsByClassName(partMenu);
-       function muda(div){
-           let i=div-1;
-        divmenu[i].style.backgroundColor=${corBtHover.value};
-    }
-   &lt;/script&gt;
     </code>`
     codigoCSS.innerHTML+=`<pre><code>/*formatação do menu-mobile in.*/
         nav#menu-mobile1{
