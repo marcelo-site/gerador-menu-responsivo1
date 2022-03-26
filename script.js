@@ -483,7 +483,7 @@ function gravarDados(){
        let divmenu=document.getElementsByClassName(partMenu);
        function muda(div){
            let i=div-1;
-        divmenu[i].style.backgroundColor=$corBtHover;
+        divmenu[i].style.backgroundColor=corBtHover;
     }
    &lt;/script&gt;
     </code>`
