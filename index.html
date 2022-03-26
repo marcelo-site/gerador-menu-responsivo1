@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-ber">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 90%;
+            margin: auto;
+            margin-bottom: 50px;
+            background-color: rgb(238, 242, 247);
+        }
+        input.texto{
+            font-size: 1.2em;
+            margin: 10px;
+            height: 30px;
+            width: 600px;
+        }
+        .pulaLinha{
+            display: block;
+        }
+        label,div{
+            margin: 10px;
+        }
+        .ladoAlado{
+            display: inline;
+        }
+        div.res{
+            flex-wrap: wrap;
+            width: 500px;
+            border: 1px solid black;
+            white-space: wrap;
+            line-break: auto;
+            word-wrap: break-word;
+        }
+        code{
+            display: block;
+            margin-bottom: 10px;
+            width: 700px;
+            word-wrap: break-word;
+            margin: 20px;
+            font-size: 1.5em;
+        }
+        .absoluto{
+            position: absolute;
+            background-color: rgb(78, 136, 187);
+            top: 50px;
+            left: 10px;
+            margin-bottom: 100px;
+        }
+        .relativo{
+            position: relative;
+            margin-bottom: 150px;
+            height: 50px;
+            width: 80%; 
+        }
+        button{
+            background-color: blue;
+            margin: 10px;
+            padding: 5px;
+            color: white;
+            font-size: 20px;
+        }
+        p{
+            font-size: 1.3em;
+            line-height: 1.5;
+        }
+        hr{
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.644);
+            width: 700px;
+            margin-left: 3px;
+        }
+        h2{
+            font-size: 2em;
+            margin-top: 50px;
+        }
+        h3{
+            font-size: 1.5em;
+        }
+        label{
+            font-size: 1.3em;
+        }
+        h4{
+            font-size: 1.5em;
+        }
+        input.cor{
+            width: 150px;
+            margin: 10px 5%;
+            height: 60px;
+            margin-bottom: 50px;
+        }
+        #res,#res1{
+            padding-bottom: 40px;
+        }
+        span{
+            display: block;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .num{
+            height: 30px;
+            font-size: 1.2em;
+            width: 80px;
+            margin: 20px 20px -10px 20px;
+        }
+    </style>
+</head>
+<body onload=" icones()">
+    <h1>Gerador de Código para seu Menu Mobile</h1>
+    
+    <h3>Algumas considerações:</h3>
+    <p>Para criar link para o watsapp é nescessário esse link:  <strong>https://api.whatsapp.com/send?phone=55</strong> <br> e completar o link com seu numero, comecando pelo DDD.</p>
+    <p>Para criar um link para o Email depois do mailto: vem seu seuemail exemplo: <br>
+    <strong>mailto:usuario@gmail.com.br.</strong></p>
+    <p>Para criar link para o telegram esse é o link:  <strong>https://t.me/nome-do-usuario </strong>basta<br> editar nome-do-usuario para seu nome de usuário no telegram.</p>
+
+    <h3>Pre-vizualização</h3>
+    <hr>
+    <img src="/img/menu-mobile.png" alt="">
+    <img src="/img/menu-mobile-escondido.png" alt="">
+
+    <h4>Vamos começar a construir o menu</h4>
+    <h2>Parte visível</h2>
+    <hr>
+
+    <h3>ITEM 1:</h3>
+    <label for="itemMenu1">LINK DO ITEM 1:</label>
+    <input placeholder="Insira aqui o link do item" class="pulaLinha texto" id="itemMenu1" type="text">
+    <div id="div1"></div>
+    <label for="legenda1">LEGENDA DO ITEM 1:</label>
+    <input placeholder="Insira aqui a legenda do item" class="pulaLinha texto" id="legenda1" type="text">
+
+    <h3>ITEM 2:</h3>
+    <label for="itemMenu2">LINK DO ITEM 2:</label>
+    <input placeholder="Insira aqui o link do item" class="pulaLinha texto" id="itemMenu2" type="text">
+    <div id="div2"></div>
+    <label for="legenda2">LEGENDA DO ITEM 2:</label>
+    <input placeholder="Insira aqui a legenda do item" class="pulaLinha texto" id="legenda2" type="text">
+
+    <h3>ITEM 3:</h3>
+    <label for="itemMenu3">LINK DO ITEM 3:</label>
+    <input placeholder="Insira aqui o link do item" class="pulaLinha texto" id="itemMenu3" type="text">
+    <div id="div3"></div>
+    <label for="legenda3">LEGENDA DO ITEM 3:</label>
+    <input placeholder="Insira aqui a legenda do item" class="pulaLinha texto" id="legenda3" type="text">
+
+    <h3>ITEM 4:</h3>
+    <label for="itemMenu4">LINK DO ITEM 4:</label>
+    <input placeholder="Insira aqui o link do item" class="pulaLinha texto" id="itemMenu4" type="text">
+    <div id="div4"></div>
+    <label for="legenda4">LEGENDA DO ITEM 4:</label>
+    <input placeholder="Insira aqui a legenda do item" class="pulaLinha texto" id="legenda4" type="text">
+
+    <h3>ITEM 5:</h3>
+    <p>Esse item já tem um icone pre-definido, esse item é o ativador do menu escondido<br> por isso também não e nescessário link.</p>
+    <label for="legenda5">LEGENDA DO ITEM 5:</label>
+    <input placeholder="Insira aqui a legenda do item" class="pulaLinha texto" id="legenda5" type="text">
+    
+    <h2>Partes escondidas</h2>
+    <hr>
+    <div id="filhoEscondido">
+        <h4>ITEM 1:</h4>
+        <label for="linkEscondido1">Link para o item 1:</label>
+        <input class="pulaLinha texto"  id="linkEscondido1" type="text" placeholder="Insira aqui o link do item">
+        <label class="pulaLinha"  for="itemescondido1">Legenda para o item 1:</label>
+        <input class="pulaLinha texto"  id="itemescondido1" type="text" placeholder="Insira aqui a legenda do item">
+
+        <h4>ITEM 2:</h4>
+        <label for="linkEscondido2">Link para o item 2:</label>
+        <input class="pulaLinha texto"  id="linkEscondido2" type="text" placeholder="Insira aqui o link do item">
+        <label class="pulaLinha texto"  for="itemescondido2">Legenda para o item 2:</label>
+        <input class="pulaLinha texto"  id="itemescondido2" type="text" placeholder="Insira aqui a legenda do item">
+
+        <h4>ITEM 3:</h4>
+        <label for="linkEscondido3">Link para o item 3:</label>
+        <input class="pulaLinha texto"  id="linkEscondido3" type="text" placeholder="Insira aqui o link do item">
+        <label class="pulaLinha texto"  for="itemescondido3">Legenda para o item 3:</label>
+        <input class="pulaLinha texto"  id="itemescondido3" type="text" placeholder="Insira aqui a legenda do item">
+
+        <h4>ITEM 4:</h4>
+        <label for="linkEscondido4">Link para o item 4:</label>
+        <input class="pulaLinha texto"  id="linkEscondido4" type="text" placeholder="Insira aqui o link do item">
+        <label class="pulaLinha texto"  for="itemescondido4">Legenda para o item 4:</label>
+        <input class="pulaLinha texto"  id="itemescondido4" type="text" placeholder="Insira aqui a legenda do item">
+
+        <h4>ITEM 5:</h4>
+        <label for="linkEscondido5">Link para o item 5:</label>
+        <input class="pulaLinha texto"  id="linkEscondido5" type="text" placeholder="Insira aqui o link do item">
+        <label class="pulaLinha texto"  for="itemescondido5">Legenda para o item 5:</label>
+        <input class="pulaLinha texto"  id="itemescondido5" type="text" placeholder="Insira aqui a legenda do item">
+    </div>
+    <h2>Cores</h2>
+    <hr>
+    <p>Clique no retângulo colorido para abrir uma caixa de dialógo para escolha da sua cor.</p>
+    <label for="corBarraP">Cor da barra principal do menu:</label>
+    <input id="corBarraP" class="pulaLinha cor" type="color">
+    
+
+    <label for="corBotao">Cor do botão do menu:</label>
+    <input id="corBotao" class="pulaLinha cor" type="color">
+
+    <label for="corIcon">Cor do icone e legenda do menu:</label>
+    <input id="corIconP" class="pulaLinha cor" type="color">
+
+    <label for="corBtHover">Cor do botão ao tocar:</label>
+    <input id="corBtHover" class="pulaLinha cor" type="color">
+
+    <label for="corFundoEsc">Cor de fundo do menu escondido:</label>
+    <input id="corFundoEsc" class="pulaLinha cor" type="color">
+
+    <label for="corFonteEsc">Cor da fonte do menu escondido:</label>
+    <input id="corFonteEsc" class="pulaLinha cor" type="color">
+
+    <h2>Ponto de interrupção:</h2>
+    <p><span>Atenção:</span> Qualquer largura de tela maior do que o informado, esse menu estará<br> oculto, mesmo no ambiente de desnvolvimento, só é possível vizualizar<br> diminuindo a largura do browser para um pixel menor que o informado.</p>
+    <label for="interrompe">Informe a largura de tela máxima para exibir o menu,<br>
+        ou aceite o valor padrão:</label>
+    <input id="interrompe" class="pulaLinha num" type="number" value="800" placeholder="">
+    <p>O valor já estar em px:</p>
+
+    <button id="gravar" onclick="gravarDados();esconder(1)">Gerar código</button>
+
+<div class="relativo">
+    <button onclick="esconder(1)" >Código HTML</button>
+    <button onclick="esconder(2)" >Código CSS</button>
+   
+    <div class="absoluto" id="res" >
+    </div>
+    <div class="absoluto" id="res1"></div>
+</div>
+        <script src="script.js">
+        </script>
+</body>
+</html>
